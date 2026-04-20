@@ -243,11 +243,11 @@
 
   <script>
     const servicios = [
-      { id: 1, nombre: 'Pack 6 Pelotas Chocadoras Premium', descripcion: 'Pack de 6 pelotas chocadoras para eventos grandes. ¡Para mayores de 10 años!', precio: 75000, categoria: 'paquetes', emoji: '💥', fondo: 'linear-gradient(135deg, #FF2D55, #FF6B00)', popular: true, detalle: 'El pack más completo de pelotas chocadoras para eventos grandes. Incluye 6 pelotas chocadoras de última generación, 6 cascos protectores certificados, 6 petos acolchados reforzados y pista delimitada de 8x8 metros. Apto para niños y adultos mayores de 10 años. Equipamiento profesional para torneos y competencias. Capacidad: 6 jugadores simultáneamente. Duración mínima: 2 horas. ¡La diversión sin límites!' },
-      { id: 2, nombre: 'Pack 6 Pelotas Chocadoras Junior', descripcion: 'Pack de 6 pelotas chocadoras para niños de 5 a 12 años. ¡Diversión total!', precio: 70000, categoria: 'paquetes', emoji: '⚡', fondo: 'linear-gradient(135deg, #007AFF, #AF52DE)', popular: true, detalle: 'El pack ideal para eventos familiares y cumpleaños de niños. Incluye 6 pelotas chocadoras de tamaño junior, 6 cascos protectores ajustables, 6 petos acolchados cómodos y pista de seguridad delimitada. Perfecto para niños entre 5 y 12 años. Equipamiento de calidad profesional diseñado especialmente para los más pequeños. Capacidad: 6 jugadores simultáneamente. Turnos de 15-20 minutos recomendados. ¡Diversión garantizada para toda la familia!' },
-      { id: 3, nombre: 'Tiro al Blanco Inflable', descripcion: 'Juego de tiro al blanco inflable. ¡Demuestra tu puntería!', precio: 60000, categoria: 'juegos', emoji: '🎯', fondo: 'linear-gradient(135deg, #FFD600, #FF6B00)', popular: false, detalle: 'Tiro al blanco inflable profesional con sistema de puntuación automática. Estructura de 2.5 metros de alto x 2 metros de ancho, con 6 círculos de diferentes tamaños. Incluye 10 bolas de espuma suave con velcro. Apto para todas las edades. Sistema de puntos: cada círculo suma puntos diferentes según dificultad. Perfecto para fiestas, eventos corporativos y competencias. Incluye tabla de puntajes y premios sugeridos. ¡Ideal para eventos familiares y escolares!' },
-      { id: 4, nombre: 'Zorb Ball Individual Premium', descripcion: 'Bola gigante Zorb Ball para rodar. ¡Experiencia única!', precio: 60000, categoria: 'zorb-ball', emoji: '🌀', fondo: 'linear-gradient(135deg, #34C759, #007AFF)', popular: false, detalle: 'Zorb Ball de última generación con doble capa de seguridad. Bola inflable gigante de 2 metros de diámetro en la que te metes y ruedas. Una experiencia única e inolvidable. Apto para personas de 18 a 100 kg. El participante va completamente asegurado dentro de la bola con arneses de seguridad. Superficie recomendada: pasto, arena o terreno plano. Incluye bomba de aire profesional, arneses de seguridad y operador certificado. ¡La sensación de volar sin dejar el suelo!' },
-      { id: 5, nombre: 'Jenga Gigante en Oferta', descripcion: 'Jenga gigante profesional. ¡Desde $10.000 al contratar servicios!', precio: 15000, categoria: 'juegos', emoji: '🎮', fondo: 'linear-gradient(135deg, #AF52DE, #FF2D55)', popular: true, detalle: 'Jenga gigante con piezas de madera de 1 metro de alto aprox. Torre de 54 bloques de colores variados. Objetivo: sacar piezas de la base y colocarlas en la cima sin derrumbar la torre. Incluye instrucciones y sistema de puntuación. Apto para todas las edades, desde 6 años. Perfecto para fiestas, eventos corporativos y cumpleaños. ¡OFERTA ESPECIAL: Precio reducido a $10.000 cuando contratas cualquier otro servicio de pelotas chocadoras! Diversión, estrategia y emoción en un solo juego.' }
+      { id: 1, nombre: 'Pack 6 Pelotas Chocadoras Premium', descripcion: 'Pack de 6 pelotas chocadoras para eventos grandes. ¡Para mayores de 10 años incluso adultos!', precio: 75000, categoria: 'paquetes', emoji: '💥', fondo: 'linear-gradient(135deg, #FF2D55, #FF6B00)', popular: true,  imagenes: ['../img/Pelotas_chocadoras_grandes.jpeg','../img/Bumper_ball.jpeg'],detalle: 'El pack más completo de pelotas chocadoras. Incluye 6 pelotas chocadoras. Apto para niños y adultos mayores de 10 años. Capacidad: 6 jugadores simultáneamente. Duración mínima: 3 horas. ¡La diversión sin límites!' },
+      { id: 2, nombre: 'Pack 6 Pelotas Chocadoras Junior', descripcion: 'Pack de 6 pelotas chocadoras para niños de 5 a 12 años. ¡Diversión total!', precio: 70000, categoria: 'paquetes', emoji: '⚡', imagenes: ['../img/Pelotas_chocadoras.jpeg'],fondo: 'linear-gradient(135deg, #007AFF, #AF52DE)', popular: true, detalle: 'El pack ideal para eventos familiares y cumpleaños de niños. Incluye 6 pelotas chocadoras de tamaño junior. Perfecto para niños entre 5 y 12 años. Capacidad: 6 jugadores simultáneamente. ¡Diversión garantizada para toda la familia!' },
+      { id: 3, nombre: 'Tiro al Blanco Inflable', descripcion: 'Juego de tiro al blanco inflable. ¡Demuestra tu puntería!', precio: 60000, categoria: 'juegos', emoji: '🎯', fondo: 'linear-gradient(135deg, #FFD600, #FF6B00)', popular: false, detalle: 'Tiro al blanco inflable profesional. Estructura de 3 metros de alto x 3 metros de ancho, con 6 círculos de diferentes tamaños. Incluye 2 balones suaves de velcro. Apto para todas las edades. Perfecto para fiestas, eventos corporativos y competencias. ¡Ideal para eventos familiares y escolares!' },
+      { id: 4, nombre: 'Zorb Ball Individual Premium', descripcion: 'Bola gigante Zorb Ball para rodar. ¡Experiencia única!', precio: 60000, categoria: 'zorb-ball', emoji: '🌀', fondo: 'linear-gradient(135deg, #34C759, #007AFF)', popular: false,imagenes: ['../img/Zorbball.jpeg'], detalle: 'Zorb Ball de última generación con doble capa de seguridad. Bola inflable gigante de 2 metros de diámetro en la que te metes y ruedas. Una experiencia única e inolvidable. Apto para personas de 18 a 100 kg. El participante va completamente asegurado dentro de la bola con arneses de seguridad. Superficie recomendada: pasto, arena o terreno plano. Incluye bomba de aire profesional, arneses de seguridad y operador certificado. ¡La sensación de volar sin dejar el suelo!' },
+      { id: 5, nombre: 'Jenga Gigante en Oferta', descripcion: 'Jenga gigante profesional. ¡Desde $10.000 al contratar servicios!', precio: 15000, categoria: 'juegos', emoji: '🎮', fondo: 'linear-gradient(135deg, #AF52DE, #FF2D55)', popular: true, imagenes: ['../img/Jenga_gigante.jpeg'], detalle: 'Jenga gigante con piezas de madera de 1 metro de alto aprox. Torre de 54 bloques de colores variados. Objetivo: sacar piezas de la base y colocarlas en la cima sin derrumbar la torre. Apto para todas las edades, desde 6 años. Perfecto para fiestas, eventos corporativos y cumpleaños. ¡OFERTA ESPECIAL: Precio reducido a $10.000 cuando contratas cualquier otro servicio de pelotas chocadoras! Diversión, estrategia y emoción en un solo juego.' }
     ];
 
     const id = parseInt(localStorage.getItem('servicioDetalle'));
@@ -260,10 +260,30 @@
       const horas = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
 
       document.getElementById('detalle-card').innerHTML = `
-        <div class="detalle-img" style="background:${servicio.fondo}">
-<span style="filter:drop-shadow(0 8px 16px rgba(0,0,0,0.3))">${servicio.emoji}</span>          
-          ${servicio.popular ? '<div class="detalle-badge">⭐ Popular</div>' : ''}
+<div class="detalle-img" style="background:${servicio.fondo}; padding:0; position:relative; overflow:hidden;">
+  ${servicio.imagenes && servicio.imagenes.length > 0 ? `
+    <div id="det-track" style="display:flex; height:100%; transition: transform 0.4s ease;">
+      ${servicio.imagenes.map(img => `
+        <div style="min-width:100%; height:100%;">
+          <img src="${img}" style="width:100%;height:100%;object-fit:cover;" />
         </div>
+      `).join('')}
+    </div>
+    ${servicio.imagenes.length > 1 ? `
+      <button onclick="detSlide(-1)" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.3);border:none;color:white;font-size:2rem;width:40px;height:40px;border-radius:50%;cursor:pointer;backdrop-filter:blur(4px);">‹</button>
+      <button onclick="detSlide(1)" style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.3);border:none;color:white;font-size:2rem;width:40px;height:40px;border-radius:50%;cursor:pointer;backdrop-filter:blur(4px);">›</button>
+      <div id="det-dots" style="position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;">
+        ${servicio.imagenes.map((_, i) => `
+          <div onclick="detIr(${i})" style="width:${i===0?'20px':'8px'};height:8px;border-radius:${i===0?'4px':'50%'};background:${i===0?'white':'rgba(255,255,255,0.5)'};cursor:pointer;transition:all 0.3s;" id="det-dot-${i}"></div>
+        `).join('')}
+      </div>
+    ` : ''}
+    ${servicio.popular ? '<div class="detalle-badge">⭐ Popular</div>' : ''}
+  ` : `
+    <span style="filter:drop-shadow(0 8px 16px rgba(0,0,0,0.3))">${servicio.emoji}</span>
+    ${servicio.popular ? '<div class="detalle-badge">⭐ Popular</div>' : ''}
+  `}
+</div>
         <div class="detalle-body">
           <p class="detalle-categoria">${servicio.categoria.replace(/-/g, ' ')}</p>
           <h1>${servicio.nombre}</h1>
@@ -373,5 +393,28 @@
       if (contador) contador.textContent = total;
     }
   </script>
+
+  <script>
+  let detActual = 0;
+  const detImagenes = (typeof servicio !== 'undefined' && servicio.imagenes) ? servicio.imagenes : [];
+
+  function detIr(n) {
+    detActual = (n + detImagenes.length) % detImagenes.length;
+    const track = document.getElementById('det-track');
+    if (track) track.style.transform = `translateX(-${detActual * 100}%)`;
+    detImagenes.forEach((_, i) => {
+      const dot = document.getElementById(`det-dot-${i}`);
+      if (dot) {
+        dot.style.width = i === detActual ? '20px' : '8px';
+        dot.style.borderRadius = i === detActual ? '4px' : '50%';
+        dot.style.background = i === detActual ? 'white' : 'rgba(255,255,255,0.5)';
+      }
+    });
+  }
+
+  function detSlide(dir) {
+    detIr(detActual + dir);
+  }
+</script>
 </body>
 </html>
