@@ -1,0 +1,518 @@
+/* ================================
+   PELOTAS CHOCADORAS SANTIAGO
+   ================================ */
+
+:root {
+  --amarillo: #FFD600;
+  --naranja: #FF6B00;
+  --rojo: #FF2D55;
+  --azul: #007AFF;
+  --verde: #34C759;
+  --morado: #AF52DE;
+  --rosa: #FF375F;
+  --blanco: #FFFFFF;
+  --fondo: #FFF9F0;
+  --carbon: #1C1C1E;
+  --gris: #8E8E93;
+  --radius: 16px;
+  --radius-xl: 24px;
+  --sombra: 0 8px 32px rgba(0,0,0,0.12);
+  --font-display: 'Fredoka One', cursive;
+  --font-body: 'Nunito', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--fondo);
+  color: var(--carbon);
+  overflow-x: hidden;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 6vw;
+  height: 70px;
+  background: var(--amarillo);
+  box-shadow: 0 4px 0 var(--naranja);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--carbon);
+  white-space: nowrap;
+}
+
+.nav-logo span { color: var(--naranja); }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--carbon);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--naranja); }
+
+.nav-cart {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--naranja);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 0.95rem;
+  transition: transform 0.2s;
+}
+
+.nav-cart:hover { transform: scale(1.05); }
+.cart-count { font-weight: 800; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 6vw 4rem;
+  background: linear-gradient(135deg, var(--amarillo) 0%, #FFB800 40%, var(--naranja) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255,45,85,0.2) 0%, transparent 40%);
+}
+
+.hero-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  animation: confettiFall linear infinite;
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--rojo);
+  color: white;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 1.1;
+  color: var(--carbon);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--blanco);
+  text-shadow: 4px 4px 0 var(--naranja);
+}
+
+.hero p {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: rgba(28,28,30,0.8);
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+.hero-balls {
+  position: absolute;
+  right: 6vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.ball {
+  font-size: 5rem;
+  position: absolute;
+  animation: floatBall 3s ease-in-out infinite;
+}
+
+.ball-1 { top: -120px; right: 0; animation-delay: 0s; }
+.ball-2 { top: -40px; right: 120px; animation-delay: 0.5s; font-size: 4rem; }
+.ball-3 { top: 60px; right: 20px; animation-delay: 1s; font-size: 6rem; }
+.ball-4 { top: 140px; right: 140px; animation-delay: 1.5s; font-size: 3.5rem; }
+
+@keyframes floatBall {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(15deg); }
+}
+
+/* ── BOTONES ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--rojo);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #c0001e;
+  transition: all 0.15s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 0 #c0001e;
+}
+
+.btn-primary:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #c0001e;
+}
+
+/* ── CATEGORÍAS ── */
+.categorias {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem 6vw;
+  background: white;
+  flex-wrap: wrap;
+}
+
+.cat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 3px solid transparent;
+  background: var(--fondo);
+}
+
+.cat-item:hover {
+  border-color: var(--amarillo);
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+
+.cat-item span { font-size: 2rem; }
+.cat-item p { font-weight: 700; font-size: 0.85rem; color: var(--carbon); }
+
+/* ── SECTION HEADER ── */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-tag {
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--naranja);
+  margin-bottom: 0.5rem;
+}
+
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--carbon);
+}
+
+.section-header h2 em {
+  font-style: normal;
+  color: var(--naranja);
+}
+
+/* ── SERVICIOS ── */
+.servicios {
+  padding: 5rem 6vw;
+  background: var(--fondo);
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.servicio-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  cursor: pointer;
+  transition: all 0.25s;
+  border: 3px solid transparent;
+}
+
+.servicio-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  border-color: var(--amarillo);
+}
+
+.servicio-img {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  position: relative;
+}
+
+.servicio-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--rojo);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.3rem 0.7rem;
+  border-radius: 50px;
+}
+
+.servicio-info {
+  padding: 1.2rem;
+}
+
+.servicio-categoria {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--naranja);
+  margin-bottom: 0.3rem;
+}
+
+.servicio-info h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-bottom: 0.4rem;
+  color: var(--carbon);
+}
+
+.servicio-info p {
+  font-size: 0.85rem;
+  color: var(--gris);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.servicio-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.servicio-precio {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--carbon);
+}
+
+.btn-ver {
+  background: var(--amarillo);
+  color: var(--carbon);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 0 #c9a800;
+}
+
+.btn-ver:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #c9a800;
+}
+
+/* ── CONTACTO ── */
+.contacto {
+  padding: 5rem 6vw;
+  background: white;
+  text-align: center;
+}
+
+.contacto-info {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-decoration: none;
+  box-shadow: 0 6px 0 #128C4A;
+  transition: all 0.15s;
+}
+
+.btn-whatsapp:hover { transform: translateY(-3px); }
+
+.btn-email {
+  display: inline-block;
+  background: var(--azul);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-decoration: none;
+  box-shadow: 0 6px 0 #0056b3;
+  transition: all 0.15s;
+}
+
+.btn-email:hover { transform: translateY(-3px); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--carbon);
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--amarillo);
+}
+
+.footer p { font-size: 0.9rem; color: rgba(255,255,255,0.6); margin-top: 0.3rem; }
+.footer-copy { margin-top: 1rem; font-size: 0.8rem; }
+
+/* ── SIN RESULTADOS ── */
+.sin-resultados {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.1rem;
+  color: var(--gris);
+  grid-column: 1/-1;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .hero-balls { display: none; }
+  .nav-links { display: none; }
+  .hero { text-align: center; }
+  .hero-content { max-width: 100%; }
+}
+.btn-instagram {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-tiktok {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+  background: #000000;
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-facebook {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+  background: #1877F2;
+  color: white;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-instagram:hover,
+.btn-tiktok:hover,
+.btn-facebook:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
