@@ -125,6 +125,18 @@
       .carrito-layout { grid-template-columns: 1fr; }
       .carrito-resumen { position: static; }
     }
+    .carrito-resumen .btn-whatsapp {
+  width: 100%;
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  display: block;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  border-radius: 50px;
+  text-decoration: none;
+}
   </style>
 </head>
 <body>
@@ -172,7 +184,7 @@
           <span>Total</span>
           <span id="total">$0</span>
         </div>
-        <button class="btn-primary" onclick="irAPagar()">Pagar con Transbank 💳</button>
+        <button class="btn-whatsapp" onclick="irAPagar()">💬 Coordinar reserva por WhatsApp</button>
         <button class="btn-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
       </div>
     </div>
@@ -235,9 +247,20 @@
       cargarCarrito();
     }
 
-    function irAPagar() {
-      alert('🚧 Integración con Transbank próximamente. Por ahora contáctanos por WhatsApp para confirmar tu reserva.');
-    }
+function irAPagar() {
+  const carritoLocal = JSON.parse(localStorage.getItem('carritoChocadoras') || '[]');
+  if (carritoLocal.length === 0) return;
+
+  const total = carritoLocal.reduce((s, i) => s + Number(i.precio), 0);
+
+  const detalle = carritoLocal.map((item, i) =>
+    `${i + 1}. ${item.nombre} - ${formatearFecha(item.fecha)} a las ${item.hora} hrs - $${Number(item.precio).toLocaleString('es-CL')}`
+  ).join('%0A');
+
+  const mensaje = `🎉 Hola! Quiero coordinar una reserva:%0A%0A${detalle}%0A%0A💰 Total: $${total.toLocaleString('es-CL')}`;
+
+  window.open(`https://wa.me/56954943859?text=${mensaje}`, '_blank');
+}
 
     cargarCarrito();
   </script>
