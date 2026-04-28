@@ -9,7 +9,7 @@ const servicios = [
     descripcion: 'Pack de 6 pelotas chocadoras para eventos grandes. ¡Para mayores de 10 años!',
     precio: 75000,
     categoria: 'paquetes',
-    imagen: 'img/Bumper_balls.jpeg',
+    imagen: 'img/Pelotas_chocadoras_grandes.jpeg',
     emoji: '💥',
     fondo: 'linear-gradient(135deg, #FF2D55, #FF6B00)',
     popular: true,
@@ -45,7 +45,7 @@ const servicios = [
     descripcion: 'Bola gigante Zorb Ball para rodar. ¡Experiencia única!',
     precio: 60000,
     categoria: 'zorb-ball',
-    imagen: 'img/Zorbball.jpeg',
+    imagen: 'img/Zorb_ball.jpeg',
     emoji: '🌀',
     fondo: 'linear-gradient(135deg, #34C759, #007AFF)',
     popular: false,
@@ -103,6 +103,12 @@ function renderizarServicios(lista) {
 function filtrarCategoria(categoria) {
   const filtrados = servicios.filter(s => s.categoria === categoria);
   renderizarServicios(filtrados);
+  document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ── MOSTRAR TODOS LOS SERVICIOS ──
+function mostrarTodos() {
+  renderizarServicios(servicios);
   document.getElementById('servicios').scrollIntoView({ behavior: 'smooth' });
 }
 

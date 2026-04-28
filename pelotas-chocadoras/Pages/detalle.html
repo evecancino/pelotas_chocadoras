@@ -343,6 +343,7 @@
         nombre: servicio.nombre,
         precio: servicio.precio,
         emoji: servicio.emoji,
+        imagen: servicio.imagenes && servicio.imagenes.length > 0 ? servicio.imagenes[0].replace('../', '') : null,
         fondo: servicio.fondo,
         fecha: fecha,
         hora: hora,

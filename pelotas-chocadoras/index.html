@@ -116,8 +116,8 @@
   <nav class="navbar">
     <div class="nav-logo">🎯 Pelotas Chocadoras <span>Santiago</span></div>
     <ul class="nav-links">
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#inicio" onclick="mostrarTodos(); document.getElementById('inicio').scrollIntoView({ behavior: 'smooth' }); return false;">Inicio</a></li>
+      <li><a href="#servicios" onclick="mostrarTodos(); return false;">Servicios</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <div class="nav-cart" onclick="window.location.href='Pages/carrito.html'" style="cursor:pointer;">
@@ -133,7 +133,7 @@
       <div class="hero-badge">🎊 ¡La diversión más grande de Santiago!</div>
       <h1>¡Choca, rueda<br/>y <em>diviértete!</em></h1>
       <p>Arriendo de pelotas chocadoras en Santiago para cumpleaños, eventos y actividades recreativas. Servicio a domicilio en toda la Región Metropolitana.</p>
-      <a href="#servicios" class="btn-primary">Ver servicios 🎉</a>
+      <a href="#servicios" class="btn-primary" onclick="mostrarTodos(); return false;">Ver servicios 🎉</a>
     </div>
 
     <!-- CARRUSEL -->
