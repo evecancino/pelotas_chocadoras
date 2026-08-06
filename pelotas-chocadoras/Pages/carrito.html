@@ -261,11 +261,11 @@ function irAPagar() {
 
   const detalle = carritoLocal.map((item, i) =>
     `${i + 1}. ${item.nombre} - ${formatearFecha(item.fecha)} a las ${item.hora} hrs - $${Number(item.precio).toLocaleString('es-CL')}`
-  ).join('%0A');
+  ).join('\n');
 
-  const mensaje = `🎉 Hola! Quiero coordinar una reserva:%0A%0A${detalle}%0A%0A💰 Total: $${total.toLocaleString('es-CL')}`;
+  const mensaje = `🎉 Hola! Quiero coordinar una reserva:\n\n${detalle}\n\n💰 Total: $${total.toLocaleString('es-CL')}`;
 
-  window.open(`https://wa.me/56972875152?text=${mensaje}`, '_blank');
+  window.open(`https://wa.me/56972875152?text=${encodeURIComponent(mensaje)}`, '_blank');
 }
 
     cargarCarrito();
